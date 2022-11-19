@@ -21,7 +21,8 @@ const App = () => {
     e.preventDefault();
     const form = e.target;
     const userName = contacts.find(
-      contact => contact.name === form.elements.name.value
+      contact =>
+        contact.name.toLowerCase() === form.elements.name.value.toLowerCase()
     );
     if (userName) {
       alert(`${userName.name} is already in contacts`);
